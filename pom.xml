@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!-- 父项目的配置 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.4</version>
+        <!-- <relativePath/> 表示禁用本地父 POM 查找，子模块会去远程仓库找 -->
+       
+    </parent>
+    <!-- 当前项目的配置 -->
+    <groupId>com.zhouchuanxiang</groupId>
+    <artifactId>springcloud202605</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>springcloud202605</name>
+    <description>springcloud202605</description>
+
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+    <!-- 当前项目的打包方式 -->
+    <packaging>pom</packaging>
+    <!--    引用组件-->
+    <modules>
+        <module>stock</module>
+        <module>order</module>
+    </modules>
+
+
+    <!-- 依赖管理 具体引用在子项目中-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2023.0.1.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>2023.0.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+
+        </dependencies>
+
+    </dependencyManagement>
+
+
+
+
+</project>
