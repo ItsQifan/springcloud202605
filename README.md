@@ -1,7 +1,7 @@
 # springcloud202605
 
 9ab50a4549600d705f74b7a9b9abae9608ef429e
-创建空项目和两个空模块，引入cloud
+0：创建空项目和两个空模块，引入cloud
 
 6af8f4ad66284c7089524f27080364ee96f5619a
 1：引入nacos，注册到nacos
