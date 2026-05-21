@@ -5,6 +5,7 @@ import com.zhouchuanxiang.order.feign.StockFeignService;
 import com.zhouchuanxiang.order.mapper.OrderMapper;
 
 
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,12 +29,13 @@ public class OrderService {
      * 创建订单
      * @return
      */
+    //分布式事务注解
+    @GlobalTransactional
     public void createOrder() {
         // 插入能否成功？
         OrderDTO order = new OrderDTO();
-        order.setId(1);
-        order.setProductId(2);
-        order.setTotalAmount(100);
+        order.setProductId(9);
+        order.setTotalAmount(1);
         order.setStatus(0);
         orderMapper.insert(order);
 

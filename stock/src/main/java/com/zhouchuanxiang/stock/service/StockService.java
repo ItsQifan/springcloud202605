@@ -23,6 +23,7 @@ public class StockService {
         System.out.println("扣减库存成功，商品ID：" + productId);
         // 扣减库存逻辑
         stockMapper.reduce(productId);
+        System.out.println(1/0);
         // ...
         // 扣减库存成功后，返回库存信息
     }
