@@ -1,6 +1,9 @@
 package com.zhouchuanxiang.order.controller;
 
 
+import com.zhouchuanxiang.order.feign.StockFeignService;
+import com.zhouchuanxiang.order.service.OrderService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +24,10 @@ public class OrderController {
     @Value("${testValue:default}")
     private String testValue;
 
+    @Autowired
+    private OrderService orderService;
+
+
     /**
      * 测试订单接口
      * @return
@@ -28,6 +35,8 @@ public class OrderController {
     @RequestMapping("/create")
     public String createOrder () {
         System.out.println("testValue: " + testValue);
+        orderService.createOrder();
+
 
         return "order create success";
     }
