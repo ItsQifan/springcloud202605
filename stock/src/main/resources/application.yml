@@ -6,6 +6,11 @@ spring:
   cloud:
     nacos:
       server-addr: 127.0.0.1:8848
+    # Sentinel 必须挂在 spring.cloud 下（不要写在 seata 下面）
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8858
+      eager: true
   config:
     import:
       - optional:nacos:${spring.application.name}.yaml

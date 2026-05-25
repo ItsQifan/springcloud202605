@@ -9,3 +9,8 @@ spring:
   config:
     import:
       - optional:nacos:${spring.application.name}.yaml
+
+# Feign 接入 Sentinel（与 Nacos 中 cloud.sentinel 配置配合使用）
+feign:
+  sentinel:
+    enabled: true
